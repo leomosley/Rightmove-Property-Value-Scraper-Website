@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="scrape">
+    {% if inp_value|length == 1 %}
+      <p style="text-align: center; margin-top: 100px";>Is this the borough you want to use: {{ inp_value.0 }}</p>
+    {% else %}
+      <ul style="text-align: center; margin-top: 100px; margin-bottom: 10px;">We couldn't find the exact borough you were looking for<br>Is it one of these?<br></ul>
+      {% for name in inp_value %}
+        <li style="text-align: center;">{{ name }}</li><br>
+      {% endfor %}
+    {% endif %}
+</div>
+{% endblock content %}
